@@ -4,7 +4,7 @@ import encrypt from "encryptjs";
 export const Register = async (req,res) =>{
     try {
         const {username, email, password} = req.body;
-
+  
         const response = await Users.find({email}).exec();
         console.log(response);
         if(response.length) return res.send("user is already registered.");
